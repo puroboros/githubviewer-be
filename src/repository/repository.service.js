@@ -1,4 +1,5 @@
 const repositoryGateway = require('./repository.gateway');
+const repositoryRepository = require('./repository.repository');
 
 const getCompanyRepositories = async (companyId) => {
     const repos =  await repositoryGateway.getRepositoriesFromCompany(companyId);
@@ -11,7 +12,17 @@ const getRepository = async (companyId, repositoryId) => {
     return repositoryGateway.getSingleRepository(companyId, repositoryId)
 }
 
+const getTrackedRepositories = async () => {
+    return repositoryRepository.listRepositories();
+}
+
+const saveRepository = async (repo) => {
+    return repositoryRepository.saveRepository(repo);
+}
+
 module.exports = {
     getCompanyRepositories,
-    getRepository
+    getRepository,
+    getTrackedRepositories,
+    saveRepository
 }
