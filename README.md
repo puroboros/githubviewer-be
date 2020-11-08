@@ -1,5 +1,10 @@
 # githubviewer-be
 
+## CAUTIION
+
+app is not using credentials so after several Github's API consumption, it's going to start returning 403
+
+
 ## Instructions: 
 
 Install dependencies:
