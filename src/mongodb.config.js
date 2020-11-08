@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import { MongoMemoryServer } from 'mongodb-memory-server';
+const mongoose = require('mongoose');
+const { MongoMemoryServer } = require('mongodb-memory-server');
 
 const mongoServer = new MongoMemoryServer();
 
@@ -10,7 +10,6 @@ mongoServer.getUri().then((mongoUri) => {
         autoReconnect: true,
         reconnectTries: Number.MAX_VALUE,
         reconnectInterval: 1000,
-        useMongoClient: true, // remove this line if you use mongoose 5 and above
     };
 
     mongoose.connect(mongoUri, mongooseOpts);

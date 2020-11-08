@@ -15,7 +15,7 @@ router.get('/repositories/:orgName/:repoName', wrapper(async (req, res) => {
     res.send(await repositoryService.getRepository(req.params.orgName, req.params.repoName));
 }));
 
-router.put('/tracked', wrapper( async (req, res) => {
+router.post('/tracked', wrapper( async (req, res) => {
     res.send(await repositoryService.saveRepository(req.body));
 }));
 router.get('/tracked', wrapper( async (req, res) => {
